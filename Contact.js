@@ -51,3 +51,8 @@ function addContact(firstName, lastName, address, city, state, zip, phone, email
     let newContact = new Contact(firstName, lastName, address, city, state, zip, phone, email);
     console.log("Contact added successfully!", newContact);
 }
+
+//UC3
+var addressBook = new Array();
+addressBook.push(new Contact('Priynshu', 'Kumar', 'Home', 'Bihar', 'Purnea', 854301, 'pk@gmail.com', 1234567890));
+console.log(addressBook);
