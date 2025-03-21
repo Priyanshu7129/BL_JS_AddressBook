@@ -56,3 +56,16 @@ function addContact(firstName, lastName, address, city, state, zip, phone, email
 var addressBook = new Array();
 addressBook.push(new Contact('Priynshu', 'Kumar', 'Home', 'Bihar', 'Purnea', 854301, 'pk@gmail.com', 1234567890));
 console.log(addressBook);
+
+//UC4
+function editContact(name, updatedDetails) {
+    let contact = addressBook.find(contact => contact.firstName === name);
+    
+    if (contact) {
+        // Update contact details
+        Object.assign(contact, updatedDetails);
+        console.log(`Contact updated successfully!`, contact);
+    } else {
+        console.log(`Contact with name ${name} not found.`);
+    }
+}
