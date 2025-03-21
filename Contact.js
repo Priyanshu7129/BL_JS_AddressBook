@@ -104,3 +104,5 @@ function addUniqueContact(firstName, lastName, address, city, state, zip, phone,
         console.log("Contact added successfully!", newContact);
     }
 }
+
+//UC8
