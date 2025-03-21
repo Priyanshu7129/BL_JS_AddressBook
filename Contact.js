@@ -116,3 +116,25 @@ function searchByCityOrState(city, state) {
         console.log(`No contacts found in City "${city}" or State "${state}".`);
     }
 }
+
+//UC9
+function viewPersonsByCity(city) {
+    let persons = addressBook.filter(contact => contact.city === city)
+                             .map(contact => `${contact.firstName} ${contact.lastName}`);
+
+    if (persons.length > 0) {
+        console.log(`Persons in ${city}:`, persons);
+    } else {
+        console.log(`No persons found in ${city}.`);
+    }
+}
+function viewPersonsByState(state) {
+    let persons = addressBook.filter(contact => contact.state === state)
+                             .map(contact => `${contact.firstName} ${contact.lastName}`);
+
+    if (persons.length > 0) {
+        console.log(`Persons in ${state}:`, persons);
+    } else {
+        console.log(`No persons found in ${state}.`);
+    }
+}
