@@ -69,3 +69,15 @@ function editContact(name, updatedDetails) {
         console.log(`Contact with name ${name} not found.`);
     }
 }
+
+//UC5
+function deleteContact(name) {
+    let index = addressBook.findIndex(contact => contact.firstName === name);
+    
+    if (index !== -1) {
+        addressBook.splice(index, 1);
+        console.log(`Contact with name ${name} deleted successfully.`);
+    } else {
+        console.log(`Contact with name ${name} not found.`);
+    }
+}
