@@ -20,6 +20,10 @@ class Contact {
         this.phone = phone;
         this.email = email;
     }
+    //override toString() to print person details
+    toString() {
+        return `${this.firstName} ${this.lastName}, ${this.address}, ${this.city}, ${this.state}, ${this.zip}, ${this.phone}, ${this.email}`;
+    }
 }
 
 
@@ -55,6 +59,11 @@ function addContact(firstName, lastName, address, city, state, zip, phone, email
 //UC3
 var addressBook = new Array();
 addressBook.push(new Contact('Priynshu', 'Kumar', 'Home', 'Bihar', 'Purnea', 854301, 'pk@gmail.com', 1234567890));
+addressBook.push(new Contact('Naman', 'Agarwal', 'House', 'UP', 'Agra', 282010, 'naman@gmail.com', 7017999999));
+addressBook.push(new Contact('Amit', 'Sharma', 'Flat 123', 'Mumbai', 'Maharashtra', 400001, 'amit@gmail.com', 9123456789));
+addressBook.push(new Contact('Sneha', 'Verma', 'Sector 18', 'Noida', 'UP', 201301, 'sneha@gmail.com', 9876501234));
+addressBook.push(new Contact('Ravi', 'Gupta', 'Tower B', 'Agra', 'UP', 282001, 'ravi@gmail.com', 9988776655));
+
 console.log(addressBook);
 
 //UC4
@@ -156,3 +165,11 @@ function countContactsByState() {
 
     console.log("Number of Contacts by State:", stateCounts);
 }
+
+//UC11
+function sortAddressBook() {
+    addressBook.sort((a, b) => a.firstName.localeCompare(b.firstName));
+    console.log("Sorted Address Book:");
+    addressBook.forEach(contact => console.log(contact.toString()));
+}
+sortAddressBook();
