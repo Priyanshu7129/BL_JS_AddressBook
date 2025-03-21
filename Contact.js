@@ -81,3 +81,11 @@ function deleteContact(name) {
         console.log(`Contact with name ${name} not found.`);
     }
 }
+
+//UC6
+function getContactCount() {
+    let count = addressBook.reduce((total) => total + 1, 0);
+    console.log(`Total Contacts: ${count}`);
+    return count;
+}
+getContactCount();
