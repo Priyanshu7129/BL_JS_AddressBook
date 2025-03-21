@@ -173,3 +173,23 @@ function sortAddressBook() {
     addressBook.forEach(contact => console.log(contact.toString()));
 }
 sortAddressBook();
+
+//UC12
+function sortByCity() {
+    let sortedByCity = [...addressBook].sort((a, b) => a.city.localeCompare(b.city));
+    console.log("Sorted by City:");
+    sortedByCity.map(contact => console.log(contact.toString()));
+}
+function sortByState() {
+    let sortedByState = [...addressBook].sort((a, b) => a.state.localeCompare(b.state));
+    console.log("Sorted by State:");
+    sortedByState.map(contact => console.log(contact.toString()));
+}
+function sortByZip() {
+    let sortedByZip = [...addressBook].sort((a, b) => a.zip - b.zip);
+    console.log("Sorted by Zip:");
+    sortedByZip.map(contact => console.log(contact.toString()));
+}
+sortByCity();
+sortByState();
+sortByZip();
