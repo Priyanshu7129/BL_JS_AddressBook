@@ -138,3 +138,21 @@ function viewPersonsByState(state) {
         console.log(`No persons found in ${state}.`);
     }
 }
+
+//UC10
+function countContactsByCity() {
+    let cityCounts = addressBook.reduce((acc, contact) => {
+        acc[contact.city] = (acc[contact.city] || 0) + 1;
+        return acc;
+    }, {});
+
+    console.log("Number of Contacts by City:", cityCounts);
+}
+function countContactsByState() {
+    let stateCounts = addressBook.reduce((acc, contact) => {
+        acc[contact.state] = (acc[contact.state] || 0) + 1;
+        return acc;
+    }, {});
+
+    console.log("Number of Contacts by State:", stateCounts);
+}
