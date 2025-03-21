@@ -106,3 +106,13 @@ function addUniqueContact(firstName, lastName, address, city, state, zip, phone,
 }
 
 //UC8
+function searchByCityOrState(city, state) {
+    let results = addressBook.filter(contact => contact.city === city || contact.state === state)
+                             .map(contact => `${contact.firstName} ${contact.lastName} - ${contact.city}, ${contact.state}`);
+
+    if (results.length > 0) {
+        console.log(`Contacts in City "${city}" or State "${state}":`, results);
+    } else {
+        console.log(`No contacts found in City "${city}" or State "${state}".`);
+    }
+}
