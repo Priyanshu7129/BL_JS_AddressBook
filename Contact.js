@@ -89,3 +89,18 @@ function getContactCount() {
     return count;
 }
 getContactCount();
+
+//UC7
+function addUniqueContact(firstName, lastName, address, city, state, zip, phone, email) {
+    // Check if contact with the same name exists
+    let duplicateCount = addressBook.filter(contact => contact.firstName === firstName && contact.lastName === lastName)
+                                    .reduce(count => count + 1, 0);
+
+    if (duplicateCount > 0) {
+        console.log(`Duplicate Entry: Contact with name ${firstName} ${lastName} already exists.`);
+    } else {
+        let newContact = new Contact(firstName, lastName, address, city, state, zip, phone, email);
+        addressBook.push(newContact);
+        console.log("Contact added successfully!", newContact);
+    }
+}
